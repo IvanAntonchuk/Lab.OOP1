@@ -31,3 +31,11 @@ void Router::displayInfo() const {
     for (const auto& r : routingTable)
         std::cout << r.first << " -> " << r.second << "\n";
 }
+
+void Router::processPacket(const std::string& packetInfo) {
+    if (!isOnline) {
+        std::cout << "[Router " << name << "] Cannot process packet, device is offline.\n";
+        return;
+    }
+    std::cout << "[Router " << name << "] Processing packet... " << packetInfo << "\n";
+}

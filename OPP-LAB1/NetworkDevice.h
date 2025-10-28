@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include "Packet.h" 
 
 class NetworkDevice {
 protected:
@@ -18,6 +19,10 @@ public:
 
     virtual void displayInfo() const;
     virtual void pingTest() const;
+    virtual void processPacket(const std::string& packetInfo) = 0;
+
+    std::string getIp() const { return ip; }
+    std::string getName() const { return name; }
 };
 
 #endif

@@ -19,6 +19,9 @@ public:
     void removeRoute(const std::string& dest);
     void updateRoute(const std::string& dest, const std::string& newGateway);
     std::string findRoute(const std::string& dest) const;
+
     void displayInfo() const override;
+
+    void processPacket(const std::string& packetInfo) override;
 };
 #endif

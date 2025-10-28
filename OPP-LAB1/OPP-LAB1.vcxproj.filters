@@ -33,6 +33,9 @@
     <ClCompile Include="Switch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ManagedSwitch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graph.h">
@@ -50,7 +53,10 @@
     <ClInclude Include="Switch.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="TemplateUtility.h">
+    <ClInclude Include="ManagedSwitch.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Packet.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -9,6 +9,9 @@ Switch::Switch(const std::string& n, const std::string& i, const std::string& m,
 
 void Switch::connectDevice(int port, const std::string& deviceName) {
     portStatus[port] = deviceName;
+    std::string fakeMac = "FA:KE:MA:C:FF:" + std::to_string(port);
+    macAddressTable[fakeMac] = port;
+    std::cout << "[Switch " << name << "] Learned fake MAC " << fakeMac << " on port " << port << "\n";
 }
 
 void Switch::disconnectDevice(int port) {
@@ -23,5 +26,22 @@ void Switch::displayPortStatus() const {
 void Switch::displayInfo() const {
     NetworkDevice::displayInfo();
     std::cout << "Manufacturer: " << manufacturer << "\nPorts: " << numPorts << "\n";
+
+    std::cout << "MAC Address Table:\n";
+    if (macAddressTable.empty()) {
+        std::cout << "  (Empty)\n";
+    }
+    for (const auto& entry : macAddressTable) {
+        std::cout << "  " << entry.first << " -> Port " << entry.second << "\n";
+    }
+
     displayPortStatus();
+}
+
+void Switch::processPacket(const std::string& packetInfo) {
+    if (!isOnline) {
+        std::cout << "[Switch " << name << "] Cannot process packet, device is offline.\n";
+        return;
+    }
+    std::cout << "[Switch " << name << "] Forwarding packet... " << packetInfo << "\n";
 }

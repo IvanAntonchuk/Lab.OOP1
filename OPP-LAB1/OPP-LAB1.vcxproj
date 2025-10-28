@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="Graph.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ManagedSwitch.cpp" />
     <ClCompile Include="NetworkDevice.cpp" />
     <ClCompile Include="Protocol.cpp" />
     <ClCompile Include="Router.cpp" />
@@ -28,11 +29,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graph.h" />
+    <ClInclude Include="ManagedSwitch.h" />
     <ClInclude Include="NetworkDevice.h" />
+    <ClInclude Include="Packet.h" />
     <ClInclude Include="Protocol.h" />
     <ClInclude Include="Router.h" />
     <ClInclude Include="Switch.h" />
-    <ClInclude Include="TemplateUtility.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
